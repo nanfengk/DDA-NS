@@ -1,0 +1,5 @@
+python C:/Users/Administrator/Desktop/NPNS-test/seal_link_pred.py --dataset my_data --epochs 10
+Epoch: 01, Train Loss: 0.3086, Valid Loss: 0.2947, Train AUC: 0.9448, Valid AUC: 0.9486, AUPR: 0.9479, F1 score: 0.8826, Accuracy: 0.8815, Recall: 0.8910, Specificity: 0.8721, Precision: 0.8744, MCC: 0.7632
+Epoch: 02, Train Loss: 0.2915, Valid Loss: 0.2997, Train AUC: 0.9486, Valid AUC: 0.9488, AUPR: 0.9486, F1 score: 0.8809, Accuracy: 0.8806, Recall: 0.8829, Specificity: 0.8783, Precision: 0.8788, MCC: 0.7612
+Epoch: 03, Train Loss: 0.2940, Valid Loss: 0.2892, Train AUC: 0.9475, Valid AUC: 0.9497, AUPR: 0.9500, F1 score: 0.8819, Accuracy: 0.8794, Recall: 0.9007, Specificity: 0.8580, Precision: 0.8638, MCC: 0.7594
+Epoch: 04, Train Loss: 0.2924, Valid Loss: 0.2913, Train AUC: 0.9481, Valid AUC: 0.9488, AUPR: 0.9493, F1 score: 0.8823, Accuracy: 0.8803, Recall: 0.8969, Specificity: 0.8637, Precision: 0.8681, MCC: 0.7610

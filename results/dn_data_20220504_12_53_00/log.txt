@@ -1,0 +1,12 @@
+python C:/Users/Administrator/Desktop/NPNS-test/seal_link_pred.py --dataset dn_data --num_hops 1 --epochs 10 --model GCN --batch_size 32 --hidden_channels 256 --dropout 0.5
+Epoch: 01, Train Loss: 0.3875, Valid Loss: 0.3138, Train AUC: 0.9100, Valid AUC: 0.9194, AUPR: 0.9426, F1 score: 0.8710, Accuracy: 0.8812, Recall: 0.8020, Specificity: 0.9604, Precision: 0.9529, MCC: 0.7721
+Epoch: 02, Train Loss: 0.3754, Valid Loss: 0.3102, Train AUC: 0.9164, Valid AUC: 0.9187, AUPR: 0.9409, F1 score: 0.8710, Accuracy: 0.8812, Recall: 0.8020, Specificity: 0.9604, Precision: 0.9529, MCC: 0.7721
+Epoch: 03, Train Loss: 0.3760, Valid Loss: 0.3071, Train AUC: 0.9167, Valid AUC: 0.9433, AUPR: 0.9546, F1 score: 0.8710, Accuracy: 0.8812, Recall: 0.8020, Specificity: 0.9604, Precision: 0.9529, MCC: 0.7721
+Epoch: 04, Train Loss: 0.3710, Valid Loss: 0.3569, Train AUC: 0.9161, Valid AUC: 0.9406, AUPR: 0.9502, F1 score: 0.8723, Accuracy: 0.8812, Recall: 0.8119, Specificity: 0.9505, Precision: 0.9425, MCC: 0.7698
+Epoch: 05, Train Loss: 0.3590, Valid Loss: 0.3224, Train AUC: 0.9197, Valid AUC: 0.9309, AUPR: 0.9507, F1 score: 0.8757, Accuracy: 0.8861, Recall: 0.8020, Specificity: 0.9703, Precision: 0.9643, MCC: 0.7835
+Epoch: 06, Train Loss: 0.3677, Valid Loss: 0.3284, Train AUC: 0.9171, Valid AUC: 0.9180, AUPR: 0.9401, F1 score: 0.8710, Accuracy: 0.8812, Recall: 0.8020, Specificity: 0.9604, Precision: 0.9529, MCC: 0.7721
+Epoch: 07, Train Loss: 0.3635, Valid Loss: 0.3742, Train AUC: 0.9181, Valid AUC: 0.9228, AUPR: 0.9427, F1 score: 0.8723, Accuracy: 0.8812, Recall: 0.8119, Specificity: 0.9505, Precision: 0.9425, MCC: 0.7698
+Epoch: 08, Train Loss: 0.3621, Valid Loss: 0.3979, Train AUC: 0.9185, Valid AUC: 0.9316, AUPR: 0.9469, F1 score: 0.8723, Accuracy: 0.8812, Recall: 0.8119, Specificity: 0.9505, Precision: 0.9425, MCC: 0.7698
+Epoch: 09, Train Loss: 0.3674, Valid Loss: 0.3536, Train AUC: 0.9159, Valid AUC: 0.9398, AUPR: 0.9488, F1 score: 0.8723, Accuracy: 0.8812, Recall: 0.8119, Specificity: 0.9505, Precision: 0.9425, MCC: 0.7698
+Epoch: 10, Train Loss: 0.3531, Valid Loss: 0.3416, Train AUC: 0.9218, Valid AUC: 0.9439, AUPR: 0.9503, F1 score: 0.8732, Accuracy: 0.8663, Recall: 0.9208, Specificity: 0.8119, Precision: 0.8304, MCC: 0.7371
+------------------------------------------------------------------------------------------------------

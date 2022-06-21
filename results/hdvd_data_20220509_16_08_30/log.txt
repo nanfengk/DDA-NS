@@ -1,0 +1,111 @@
+python C:/Users/Administrator/Desktop/NPNS-test/seal_link_pred.py --dataset hdvd_data --use_feature --epochs 10
+Epoch: 01, Train Loss: 0.6280, Valid Loss: 0.5745, Train AUC: 0.7218, Valid AUC: 0.7824, AUPR: 0.8156, F1 score: 0.7327, Accuracy: 0.7065, Recall: 0.8043, Specificity: 0.6087, Precision: 0.6727, MCC: 0.4212
+Epoch: 02, Train Loss: 0.5945, Valid Loss: 0.5591, Train AUC: 0.7704, Valid AUC: 0.8036, AUPR: 0.8280, F1 score: 0.7358, Accuracy: 0.6957, Recall: 0.8478, Specificity: 0.5435, Precision: 0.6500, MCC: 0.4108
+Epoch: 03, Train Loss: 0.5534, Valid Loss: 0.5358, Train AUC: 0.8085, Valid AUC: 0.8138, AUPR: 0.8397, F1 score: 0.7556, Accuracy: 0.7609, Recall: 0.7391, Specificity: 0.7826, Precision: 0.7727, MCC: 0.5222
+Epoch: 04, Train Loss: 0.5429, Valid Loss: 0.5299, Train AUC: 0.8176, Valid AUC: 0.7984, AUPR: 0.8303, F1 score: 0.7387, Accuracy: 0.6848, Recall: 0.8913, Specificity: 0.4783, Precision: 0.6308, MCC: 0.4058
+Epoch: 05, Train Loss: 0.5446, Valid Loss: 0.5230, Train AUC: 0.8150, Valid AUC: 0.8112, AUPR: 0.8372, F1 score: 0.7568, Accuracy: 0.7065, Recall: 0.9130, Specificity: 0.5000, Precision: 0.6462, MCC: 0.4535
+Epoch: 06, Train Loss: 0.5509, Valid Loss: 0.5226, Train AUC: 0.8051, Valid AUC: 0.8259, AUPR: 0.8453, F1 score: 0.7816, Accuracy: 0.7935, Recall: 0.7391, Specificity: 0.8478, Precision: 0.8293, MCC: 0.5905
+Epoch: 07, Train Loss: 0.5387, Valid Loss: 0.5213, Train AUC: 0.8192, Valid AUC: 0.8150, AUPR: 0.8385, F1 score: 0.7529, Accuracy: 0.7717, Recall: 0.6957, Specificity: 0.8478, Precision: 0.8205, MCC: 0.5499
+Epoch: 08, Train Loss: 0.5304, Valid Loss: 0.5564, Train AUC: 0.8212, Valid AUC: 0.8126, AUPR: 0.8406, F1 score: 0.7816, Accuracy: 0.7935, Recall: 0.7391, Specificity: 0.8478, Precision: 0.8293, MCC: 0.5905
+Epoch: 09, Train Loss: 0.5371, Valid Loss: 0.5465, Train AUC: 0.8146, Valid AUC: 0.7951, AUPR: 0.8314, F1 score: 0.7429, Accuracy: 0.7065, Recall: 0.8478, Specificity: 0.5652, Precision: 0.6610, MCC: 0.4306
+Epoch: 10, Train Loss: 0.5324, Valid Loss: 0.5146, Train AUC: 0.8265, Valid AUC: 0.8225, AUPR: 0.8446, F1 score: 0.7627, Accuracy: 0.6957, Recall: 0.9783, Specificity: 0.4130, Precision: 0.6250, MCC: 0.4743
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6155, Valid Loss: 0.6951, Train AUC: 0.7477, Valid AUC: 0.7105, AUPR: 0.7748, F1 score: 0.6891, Accuracy: 0.5978, Recall: 0.8913, Specificity: 0.3043, Precision: 0.5616, MCC: 0.2417
+Epoch: 02, Train Loss: 0.5670, Valid Loss: 0.6337, Train AUC: 0.7978, Valid AUC: 0.7235, AUPR: 0.7865, F1 score: 0.6835, Accuracy: 0.7283, Recall: 0.5870, Specificity: 0.8696, Precision: 0.8182, MCC: 0.4759
+Epoch: 03, Train Loss: 0.5444, Valid Loss: 0.5976, Train AUC: 0.8187, Valid AUC: 0.7294, AUPR: 0.7848, F1 score: 0.6885, Accuracy: 0.5870, Recall: 0.9130, Specificity: 0.2609, Precision: 0.5526, MCC: 0.2294
+Epoch: 04, Train Loss: 0.5308, Valid Loss: 0.6647, Train AUC: 0.8302, Valid AUC: 0.7063, AUPR: 0.7772, F1 score: 0.6667, Accuracy: 0.5000, Recall: 1.0000, Specificity: 0.0000, Precision: 0.5000, MCC: nan
+Epoch: 05, Train Loss: 0.5179, Valid Loss: 0.6157, Train AUC: 0.8305, Valid AUC: 0.7167, AUPR: 0.7819, F1 score: 0.6824, Accuracy: 0.7065, Recall: 0.6304, Specificity: 0.7826, Precision: 0.7436, MCC: 0.4179
+Epoch: 06, Train Loss: 0.5104, Valid Loss: 0.6063, Train AUC: 0.8415, Valid AUC: 0.7233, AUPR: 0.7903, F1 score: 0.6988, Accuracy: 0.7283, Recall: 0.6304, Specificity: 0.8261, Precision: 0.7838, MCC: 0.4655
+Epoch: 07, Train Loss: 0.5128, Valid Loss: 0.6242, Train AUC: 0.8390, Valid AUC: 0.7134, AUPR: 0.7828, F1 score: 0.6988, Accuracy: 0.7283, Recall: 0.6304, Specificity: 0.8261, Precision: 0.7838, MCC: 0.4655
+Epoch: 08, Train Loss: 0.5241, Valid Loss: 0.6137, Train AUC: 0.8317, Valid AUC: 0.7216, AUPR: 0.7944, F1 score: 0.7073, Accuracy: 0.7391, Recall: 0.6304, Specificity: 0.8478, Precision: 0.8056, MCC: 0.4900
+Epoch: 09, Train Loss: 0.5159, Valid Loss: 0.6231, Train AUC: 0.8382, Valid AUC: 0.7162, AUPR: 0.7803, F1 score: 0.6988, Accuracy: 0.7283, Recall: 0.6304, Specificity: 0.8261, Precision: 0.7838, MCC: 0.4655
+Epoch: 10, Train Loss: 0.5027, Valid Loss: 0.6177, Train AUC: 0.8393, Valid AUC: 0.7370, AUPR: 0.7958, F1 score: 0.6992, Accuracy: 0.5978, Recall: 0.9348, Specificity: 0.2609, Precision: 0.5584, MCC: 0.2648
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6295, Valid Loss: 0.6072, Train AUC: 0.7310, Valid AUC: 0.7798, AUPR: 0.7867, F1 score: 0.7629, Accuracy: 0.7500, Recall: 0.8043, Specificity: 0.6957, Precision: 0.7255, MCC: 0.5030
+Epoch: 02, Train Loss: 0.5923, Valid Loss: 0.5561, Train AUC: 0.7743, Valid AUC: 0.8010, AUPR: 0.7844, F1 score: 0.7708, Accuracy: 0.7609, Recall: 0.8043, Specificity: 0.7174, Precision: 0.7400, MCC: 0.5237
+Epoch: 03, Train Loss: 0.5633, Valid Loss: 0.5369, Train AUC: 0.7989, Valid AUC: 0.8251, AUPR: 0.8470, F1 score: 0.7742, Accuracy: 0.7717, Recall: 0.7826, Specificity: 0.7609, Precision: 0.7660, MCC: 0.5436
+Epoch: 04, Train Loss: 0.5640, Valid Loss: 0.5291, Train AUC: 0.8024, Valid AUC: 0.8204, AUPR: 0.8396, F1 score: 0.7826, Accuracy: 0.7826, Recall: 0.7826, Specificity: 0.7826, Precision: 0.7826, MCC: 0.5652
+Epoch: 05, Train Loss: 0.5638, Valid Loss: 0.5557, Train AUC: 0.8014, Valid AUC: 0.8143, AUPR: 0.8377, F1 score: 0.7826, Accuracy: 0.7826, Recall: 0.7826, Specificity: 0.7826, Precision: 0.7826, MCC: 0.5652
+Epoch: 06, Train Loss: 0.5663, Valid Loss: 0.5514, Train AUC: 0.8008, Valid AUC: 0.8147, AUPR: 0.8261, F1 score: 0.7835, Accuracy: 0.7717, Recall: 0.8261, Specificity: 0.7174, Precision: 0.7451, MCC: 0.5467
+Epoch: 07, Train Loss: 0.5486, Valid Loss: 0.5291, Train AUC: 0.8081, Valid AUC: 0.8214, AUPR: 0.8431, F1 score: 0.7826, Accuracy: 0.7826, Recall: 0.7826, Specificity: 0.7826, Precision: 0.7826, MCC: 0.5652
+Epoch: 08, Train Loss: 0.5357, Valid Loss: 0.5265, Train AUC: 0.8216, Valid AUC: 0.8152, AUPR: 0.8307, F1 score: 0.7778, Accuracy: 0.7826, Recall: 0.7609, Specificity: 0.8043, Precision: 0.7955, MCC: 0.5658
+Epoch: 09, Train Loss: 0.5460, Valid Loss: 0.5288, Train AUC: 0.8148, Valid AUC: 0.8166, AUPR: 0.8430, F1 score: 0.7826, Accuracy: 0.7826, Recall: 0.7826, Specificity: 0.7826, Precision: 0.7826, MCC: 0.5652
+Epoch: 10, Train Loss: 0.5279, Valid Loss: 0.5476, Train AUC: 0.8244, Valid AUC: 0.8171, AUPR: 0.8348, F1 score: 0.7835, Accuracy: 0.7717, Recall: 0.8261, Specificity: 0.7174, Precision: 0.7451, MCC: 0.5467
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6172, Valid Loss: 0.6007, Train AUC: 0.7546, Valid AUC: 0.8015, AUPR: 0.8102, F1 score: 0.7660, Accuracy: 0.7609, Recall: 0.7826, Specificity: 0.7391, Precision: 0.7500, MCC: 0.5222
+Epoch: 02, Train Loss: 0.5953, Valid Loss: 0.5574, Train AUC: 0.7762, Valid AUC: 0.7878, AUPR: 0.7850, F1 score: 0.7333, Accuracy: 0.7391, Recall: 0.7174, Specificity: 0.7609, Precision: 0.7500, MCC: 0.4787
+Epoch: 03, Train Loss: 0.5450, Valid Loss: 0.5542, Train AUC: 0.8153, Valid AUC: 0.8091, AUPR: 0.8257, F1 score: 0.7664, Accuracy: 0.7283, Recall: 0.8913, Specificity: 0.5652, Precision: 0.6721, MCC: 0.4829
+Epoch: 04, Train Loss: 0.5452, Valid Loss: 0.5542, Train AUC: 0.8149, Valid AUC: 0.7769, AUPR: 0.8151, F1 score: 0.7500, Accuracy: 0.7609, Recall: 0.7174, Specificity: 0.8043, Precision: 0.7857, MCC: 0.5237
+Epoch: 05, Train Loss: 0.5293, Valid Loss: 0.5526, Train AUC: 0.8242, Valid AUC: 0.7873, AUPR: 0.8100, F1 score: 0.7455, Accuracy: 0.6957, Recall: 0.8913, Specificity: 0.5000, Precision: 0.6406, MCC: 0.4252
+Epoch: 06, Train Loss: 0.5511, Valid Loss: 0.5549, Train AUC: 0.8157, Valid AUC: 0.7845, AUPR: 0.7973, F1 score: 0.7442, Accuracy: 0.7609, Recall: 0.6957, Specificity: 0.8261, Precision: 0.8000, MCC: 0.5262
+Epoch: 07, Train Loss: 0.5245, Valid Loss: 0.5975, Train AUC: 0.8277, Valid AUC: 0.7779, AUPR: 0.7395, F1 score: 0.7379, Accuracy: 0.7065, Recall: 0.8261, Specificity: 0.5870, Precision: 0.6667, MCC: 0.4254
+Epoch: 08, Train Loss: 0.5330, Valid Loss: 0.5598, Train AUC: 0.8214, Valid AUC: 0.7888, AUPR: 0.8100, F1 score: 0.7573, Accuracy: 0.7283, Recall: 0.8478, Specificity: 0.6087, Precision: 0.6842, MCC: 0.4702
+Epoch: 09, Train Loss: 0.5282, Valid Loss: 0.5402, Train AUC: 0.8267, Valid AUC: 0.8048, AUPR: 0.8204, F1 score: 0.7778, Accuracy: 0.7391, Recall: 0.9130, Specificity: 0.5652, Precision: 0.6774, MCC: 0.5101
+Epoch: 10, Train Loss: 0.5132, Valid Loss: 0.5884, Train AUC: 0.8321, Valid AUC: 0.7642, AUPR: 0.7969, F1 score: 0.7143, Accuracy: 0.6522, Recall: 0.8696, Specificity: 0.4348, Precision: 0.6061, MCC: 0.3380
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6250, Valid Loss: 0.6036, Train AUC: 0.7473, Valid AUC: 0.8086, AUPR: 0.7868, F1 score: 0.7708, Accuracy: 0.7609, Recall: 0.8043, Specificity: 0.7174, Precision: 0.7400, MCC: 0.5237
+Epoch: 02, Train Loss: 0.6062, Valid Loss: 0.5097, Train AUC: 0.7537, Valid AUC: 0.8620, AUPR: 0.8605, F1 score: 0.8037, Accuracy: 0.7717, Recall: 0.9348, Specificity: 0.6087, Precision: 0.7049, MCC: 0.5749
+Epoch: 03, Train Loss: 0.5581, Valid Loss: 0.5131, Train AUC: 0.8038, Valid AUC: 0.8629, AUPR: 0.8529, F1 score: 0.8211, Accuracy: 0.8152, Recall: 0.8478, Specificity: 0.7826, Precision: 0.7959, MCC: 0.6318
+Epoch: 04, Train Loss: 0.5648, Valid Loss: 0.5230, Train AUC: 0.7948, Valid AUC: 0.8611, AUPR: 0.8549, F1 score: 0.8041, Accuracy: 0.7935, Recall: 0.8478, Specificity: 0.7391, Precision: 0.7647, MCC: 0.5905
+Epoch: 05, Train Loss: 0.5474, Valid Loss: 0.4861, Train AUC: 0.8189, Valid AUC: 0.8535, AUPR: 0.8522, F1 score: 0.8182, Accuracy: 0.8261, Recall: 0.7826, Specificity: 0.8696, Precision: 0.8571, MCC: 0.6547
+Epoch: 06, Train Loss: 0.5399, Valid Loss: 0.4877, Train AUC: 0.8164, Valid AUC: 0.8511, AUPR: 0.8493, F1 score: 0.8000, Accuracy: 0.7935, Recall: 0.8261, Specificity: 0.7609, Precision: 0.7755, MCC: 0.5882
+Epoch: 07, Train Loss: 0.5398, Valid Loss: 0.4596, Train AUC: 0.8132, Valid AUC: 0.8700, AUPR: 0.8652, F1 score: 0.8387, Accuracy: 0.8370, Recall: 0.8478, Specificity: 0.8261, Precision: 0.8298, MCC: 0.6741
+Epoch: 08, Train Loss: 0.5260, Valid Loss: 0.5171, Train AUC: 0.8272, Valid AUC: 0.8261, AUPR: 0.8003, F1 score: 0.7921, Accuracy: 0.7717, Recall: 0.8696, Specificity: 0.6739, Precision: 0.7273, MCC: 0.5542
+Epoch: 09, Train Loss: 0.5224, Valid Loss: 0.5074, Train AUC: 0.8285, Valid AUC: 0.8530, AUPR: 0.8546, F1 score: 0.8261, Accuracy: 0.8261, Recall: 0.8261, Specificity: 0.8261, Precision: 0.8261, MCC: 0.6522
+Epoch: 10, Train Loss: 0.5243, Valid Loss: 0.4775, Train AUC: 0.8279, Valid AUC: 0.8596, AUPR: 0.8519, F1 score: 0.8155, Accuracy: 0.7935, Recall: 0.9130, Specificity: 0.6739, Precision: 0.7368, MCC: 0.6045
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6224, Valid Loss: 0.6107, Train AUC: 0.7347, Valid AUC: 0.7916, AUPR: 0.7450, F1 score: 0.7708, Accuracy: 0.7556, Recall: 0.8222, Specificity: 0.6889, Precision: 0.7255, MCC: 0.5157
+Epoch: 02, Train Loss: 0.5944, Valid Loss: 0.5196, Train AUC: 0.7698, Valid AUC: 0.8306, AUPR: 0.8111, F1 score: 0.7835, Accuracy: 0.7667, Recall: 0.8444, Specificity: 0.6889, Precision: 0.7308, MCC: 0.5399
+Epoch: 03, Train Loss: 0.5724, Valid Loss: 0.5732, Train AUC: 0.7947, Valid AUC: 0.8326, AUPR: 0.8205, F1 score: 0.8041, Accuracy: 0.7889, Recall: 0.8667, Specificity: 0.7111, Precision: 0.7500, MCC: 0.5849
+Epoch: 04, Train Loss: 0.5722, Valid Loss: 0.5458, Train AUC: 0.7959, Valid AUC: 0.8390, AUPR: 0.8010, F1 score: 0.8113, Accuracy: 0.7778, Recall: 0.9556, Specificity: 0.6000, Precision: 0.7049, MCC: 0.5944
+Epoch: 05, Train Loss: 0.5471, Valid Loss: 0.5095, Train AUC: 0.8092, Valid AUC: 0.8277, AUPR: 0.7976, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+Epoch: 06, Train Loss: 0.5328, Valid Loss: 0.5254, Train AUC: 0.8140, Valid AUC: 0.8331, AUPR: 0.8158, F1 score: 0.7963, Accuracy: 0.7556, Recall: 0.9556, Specificity: 0.5556, Precision: 0.6825, MCC: 0.5577
+Epoch: 07, Train Loss: 0.5542, Valid Loss: 0.5297, Train AUC: 0.8020, Valid AUC: 0.8296, AUPR: 0.8203, F1 score: 0.7835, Accuracy: 0.7667, Recall: 0.8444, Specificity: 0.6889, Precision: 0.7308, MCC: 0.5399
+Epoch: 08, Train Loss: 0.5581, Valid Loss: 0.5122, Train AUC: 0.8055, Valid AUC: 0.8277, AUPR: 0.8129, F1 score: 0.7872, Accuracy: 0.7778, Recall: 0.8222, Specificity: 0.7333, Precision: 0.7551, MCC: 0.5578
+Epoch: 09, Train Loss: 0.5440, Valid Loss: 0.5143, Train AUC: 0.8063, Valid AUC: 0.8360, AUPR: 0.8250, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+Epoch: 10, Train Loss: 0.5283, Valid Loss: 0.5376, Train AUC: 0.8182, Valid AUC: 0.8346, AUPR: 0.8244, F1 score: 0.8037, Accuracy: 0.7667, Recall: 0.9556, Specificity: 0.5778, Precision: 0.6935, MCC: 0.5760
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6150, Valid Loss: 0.6195, Train AUC: 0.7511, Valid AUC: 0.7575, AUPR: 0.7523, F1 score: 0.7525, Accuracy: 0.7222, Recall: 0.8444, Specificity: 0.6000, Precision: 0.6786, MCC: 0.4583
+Epoch: 02, Train Loss: 0.5811, Valid Loss: 0.5529, Train AUC: 0.7831, Valid AUC: 0.7941, AUPR: 0.8192, F1 score: 0.7586, Accuracy: 0.7667, Recall: 0.7333, Specificity: 0.8000, Precision: 0.7857, MCC: 0.5345
+Epoch: 03, Train Loss: 0.5572, Valid Loss: 0.5497, Train AUC: 0.8052, Valid AUC: 0.8005, AUPR: 0.8236, F1 score: 0.7708, Accuracy: 0.7556, Recall: 0.8222, Specificity: 0.6889, Precision: 0.7255, MCC: 0.5157
+Epoch: 04, Train Loss: 0.5492, Valid Loss: 0.5823, Train AUC: 0.8102, Valid AUC: 0.7726, AUPR: 0.7523, F1 score: 0.7347, Accuracy: 0.7111, Recall: 0.8000, Specificity: 0.6222, Precision: 0.6792, MCC: 0.4291
+Epoch: 05, Train Loss: 0.5367, Valid Loss: 0.5788, Train AUC: 0.8221, Valid AUC: 0.7788, AUPR: 0.8109, F1 score: 0.7368, Accuracy: 0.7222, Recall: 0.7778, Specificity: 0.6667, Precision: 0.7000, MCC: 0.4472
+Epoch: 06, Train Loss: 0.5188, Valid Loss: 0.5607, Train AUC: 0.8245, Valid AUC: 0.7832, AUPR: 0.8114, F1 score: 0.7500, Accuracy: 0.7556, Recall: 0.7333, Specificity: 0.7778, Precision: 0.7674, MCC: 0.5116
+Epoch: 07, Train Loss: 0.5384, Valid Loss: 0.5790, Train AUC: 0.8163, Valid AUC: 0.7817, AUPR: 0.7952, F1 score: 0.7500, Accuracy: 0.7556, Recall: 0.7333, Specificity: 0.7778, Precision: 0.7674, MCC: 0.5116
+Epoch: 08, Train Loss: 0.5345, Valid Loss: 0.5262, Train AUC: 0.8222, Valid AUC: 0.7978, AUPR: 0.8255, F1 score: 0.7629, Accuracy: 0.7444, Recall: 0.8222, Specificity: 0.6667, Precision: 0.7115, MCC: 0.4949
+Epoch: 09, Train Loss: 0.5324, Valid Loss: 0.5269, Train AUC: 0.8201, Valid AUC: 0.7943, AUPR: 0.8209, F1 score: 0.7640, Accuracy: 0.7667, Recall: 0.7556, Specificity: 0.7778, Precision: 0.7727, MCC: 0.5335
+Epoch: 10, Train Loss: 0.5292, Valid Loss: 0.5960, Train AUC: 0.8214, Valid AUC: 0.7481, AUPR: 0.7116, F1 score: 0.7216, Accuracy: 0.7000, Recall: 0.7778, Specificity: 0.6222, Precision: 0.6731, MCC: 0.4049
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6183, Valid Loss: 0.5426, Train AUC: 0.7444, Valid AUC: 0.8096, AUPR: 0.8637, F1 score: 0.7750, Accuracy: 0.8000, Recall: 0.6889, Specificity: 0.9111, Precision: 0.8857, MCC: 0.6154
+Epoch: 02, Train Loss: 0.5782, Valid Loss: 0.5206, Train AUC: 0.7825, Valid AUC: 0.8205, AUPR: 0.8589, F1 score: 0.7765, Accuracy: 0.7889, Recall: 0.7333, Specificity: 0.8444, Precision: 0.8250, MCC: 0.5814
+Epoch: 03, Train Loss: 0.5503, Valid Loss: 0.5122, Train AUC: 0.8075, Valid AUC: 0.8477, AUPR: 0.8554, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+Epoch: 04, Train Loss: 0.5333, Valid Loss: 0.4945, Train AUC: 0.8164, Valid AUC: 0.8610, AUPR: 0.8792, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+Epoch: 05, Train Loss: 0.5307, Valid Loss: 0.5126, Train AUC: 0.8240, Valid AUC: 0.8319, AUPR: 0.8331, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+Epoch: 06, Train Loss: 0.5301, Valid Loss: 0.4735, Train AUC: 0.8187, Valid AUC: 0.8528, AUPR: 0.8769, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+Epoch: 07, Train Loss: 0.5140, Valid Loss: 0.4725, Train AUC: 0.8359, Valid AUC: 0.8457, AUPR: 0.8772, F1 score: 0.8046, Accuracy: 0.8111, Recall: 0.7778, Specificity: 0.8444, Precision: 0.8333, MCC: 0.6236
+Epoch: 08, Train Loss: 0.5339, Valid Loss: 0.4641, Train AUC: 0.8229, Valid AUC: 0.8588, AUPR: 0.8857, F1 score: 0.7917, Accuracy: 0.7778, Recall: 0.8444, Specificity: 0.7111, Precision: 0.7451, MCC: 0.5606
+Epoch: 09, Train Loss: 0.5163, Valid Loss: 0.4878, Train AUC: 0.8334, Valid AUC: 0.8481, AUPR: 0.8766, F1 score: 0.7955, Accuracy: 0.8000, Recall: 0.7778, Specificity: 0.8222, Precision: 0.8140, MCC: 0.6006
+Epoch: 10, Train Loss: 0.5176, Valid Loss: 0.5285, Train AUC: 0.8279, Valid AUC: 0.8314, AUPR: 0.8288, F1 score: 0.8000, Accuracy: 0.7889, Recall: 0.8444, Specificity: 0.7333, Precision: 0.7600, MCC: 0.5814
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6375, Valid Loss: 0.5883, Train AUC: 0.7200, Valid AUC: 0.8415, AUPR: 0.8640, F1 score: 0.7957, Accuracy: 0.7889, Recall: 0.8222, Specificity: 0.7556, Precision: 0.7708, MCC: 0.5791
+Epoch: 02, Train Loss: 0.5914, Valid Loss: 0.5184, Train AUC: 0.7749, Valid AUC: 0.8420, AUPR: 0.8147, F1 score: 0.8222, Accuracy: 0.8222, Recall: 0.8222, Specificity: 0.8222, Precision: 0.8222, MCC: 0.6444
+Epoch: 03, Train Loss: 0.5484, Valid Loss: 0.5062, Train AUC: 0.8068, Valid AUC: 0.8598, AUPR: 0.8755, F1 score: 0.8276, Accuracy: 0.8333, Recall: 0.8000, Specificity: 0.8667, Precision: 0.8571, MCC: 0.6682
+Epoch: 04, Train Loss: 0.5525, Valid Loss: 0.5112, Train AUC: 0.8027, Valid AUC: 0.8479, AUPR: 0.8578, F1 score: 0.8090, Accuracy: 0.8111, Recall: 0.8000, Specificity: 0.8222, Precision: 0.8182, MCC: 0.6224
+Epoch: 05, Train Loss: 0.5500, Valid Loss: 0.5175, Train AUC: 0.8132, Valid AUC: 0.8504, AUPR: 0.8199, F1 score: 0.8163, Accuracy: 0.8000, Recall: 0.8889, Specificity: 0.7111, Precision: 0.7547, MCC: 0.6097
+Epoch: 06, Train Loss: 0.5430, Valid Loss: 0.5249, Train AUC: 0.8111, Valid AUC: 0.8415, AUPR: 0.7954, F1 score: 0.8125, Accuracy: 0.8000, Recall: 0.8667, Specificity: 0.7333, Precision: 0.7647, MCC: 0.6054
+Epoch: 07, Train Loss: 0.5505, Valid Loss: 0.5038, Train AUC: 0.8111, Valid AUC: 0.8484, AUPR: 0.8316, F1 score: 0.8211, Accuracy: 0.8111, Recall: 0.8667, Specificity: 0.7556, Precision: 0.7800, MCC: 0.6261
+Epoch: 08, Train Loss: 0.5490, Valid Loss: 0.5171, Train AUC: 0.8103, Valid AUC: 0.8514, AUPR: 0.8552, F1 score: 0.8222, Accuracy: 0.8222, Recall: 0.8222, Specificity: 0.8222, Precision: 0.8222, MCC: 0.6444
+Epoch: 09, Train Loss: 0.5366, Valid Loss: 0.4907, Train AUC: 0.8137, Valid AUC: 0.8484, AUPR: 0.8450, F1 score: 0.8172, Accuracy: 0.8111, Recall: 0.8444, Specificity: 0.7778, Precision: 0.7917, MCC: 0.6236
+Epoch: 10, Train Loss: 0.5378, Valid Loss: 0.4940, Train AUC: 0.8129, Valid AUC: 0.8612, AUPR: 0.8788, F1 score: 0.8172, Accuracy: 0.8111, Recall: 0.8444, Specificity: 0.7778, Precision: 0.7917, MCC: 0.6236
+------------------------------------------------------------------------------------------------------
+Epoch: 01, Train Loss: 0.6137, Valid Loss: 0.5408, Train AUC: 0.7481, Valid AUC: 0.8859, AUPR: 0.8823, F1 score: 0.8235, Accuracy: 0.8000, Recall: 0.9333, Specificity: 0.6667, Precision: 0.7368, MCC: 0.6225
+Epoch: 02, Train Loss: 0.5722, Valid Loss: 0.4788, Train AUC: 0.7824, Valid AUC: 0.8953, AUPR: 0.8839, F1 score: 0.8283, Accuracy: 0.8111, Recall: 0.9111, Specificity: 0.7111, Precision: 0.7593, MCC: 0.6351
+Epoch: 03, Train Loss: 0.5571, Valid Loss: 0.4787, Train AUC: 0.7956, Valid AUC: 0.8909, AUPR: 0.8927, F1 score: 0.8261, Accuracy: 0.8222, Recall: 0.8444, Specificity: 0.8000, Precision: 0.8085, MCC: 0.6451
+Epoch: 04, Train Loss: 0.5346, Valid Loss: 0.4885, Train AUC: 0.8139, Valid AUC: 0.8904, AUPR: 0.8801, F1 score: 0.8400, Accuracy: 0.8222, Recall: 0.9333, Specificity: 0.7111, Precision: 0.7636, MCC: 0.6610
+Epoch: 05, Train Loss: 0.5237, Valid Loss: 0.4949, Train AUC: 0.8229, Valid AUC: 0.8612, AUPR: 0.8126, F1 score: 0.8542, Accuracy: 0.8444, Recall: 0.9111, Specificity: 0.7778, Precision: 0.8039, MCC: 0.6951
+Epoch: 06, Train Loss: 0.5268, Valid Loss: 0.4518, Train AUC: 0.8193, Valid AUC: 0.8943, AUPR: 0.8968, F1 score: 0.8276, Accuracy: 0.8333, Recall: 0.8000, Specificity: 0.8667, Precision: 0.8571, MCC: 0.6682
+Epoch: 07, Train Loss: 0.5196, Valid Loss: 0.4471, Train AUC: 0.8275, Valid AUC: 0.8909, AUPR: 0.8853, F1 score: 0.8387, Accuracy: 0.8333, Recall: 0.8667, Specificity: 0.8000, Precision: 0.8125, MCC: 0.6682
+Epoch: 08, Train Loss: 0.5344, Valid Loss: 0.4517, Train AUC: 0.8162, Valid AUC: 0.8928, AUPR: 0.8832, F1 score: 0.8372, Accuracy: 0.8444, Recall: 0.8000, Specificity: 0.8889, Precision: 0.8780, MCC: 0.6916
+Epoch: 09, Train Loss: 0.5239, Valid Loss: 0.5014, Train AUC: 0.8250, Valid AUC: 0.8607, AUPR: 0.7850, F1 score: 0.8571, Accuracy: 0.8444, Recall: 0.9333, Specificity: 0.7556, Precision: 0.7925, MCC: 0.7000
+Epoch: 10, Train Loss: 0.5307, Valid Loss: 0.5154, Train AUC: 0.8232, Valid AUC: 0.8563, AUPR: 0.7819, F1 score: 0.8515, Accuracy: 0.8333, Recall: 0.9556, Specificity: 0.7111, Precision: 0.7679, MCC: 0.6875
+------------------------------------------------------------------------------------------------------
