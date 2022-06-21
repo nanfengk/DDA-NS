@@ -1,1 +1,0 @@
-python C:/Users/Administrator/Desktop/NPNS-test/seal_link_pred.py --dataset f_data --use_feature --epochs 10
