@@ -15,6 +15,9 @@ Metrics based on NSGNN models with five different datasets, including AUC, AUPR,
 1. Includes all source code for training NSGNN
 2. To predict drug-disease associations by NSGNN, run
 
+    ``` python
     python link_pred.py --dataset f_data --use_feature --epochs 100  --batch_size 32  --hidden_channels 256 --dropout 0.5
-If we want to switch the generated dataset, we can do so by changing the 'dataset' in the sample.' use_feature' is used to control whether to use drug-drug similarity and disease-disease similarity matrix information. 'epochs', 'batch_size', 'hidden_channels' and ' dropout' are used to adjust the hyperparameters of the deep learning model.
+    ```
+
+If you want to switch the generated dataset, we can do so by changing the 'dataset' in the sample.' use_feature' is used to control whether to use drug-drug similarity and disease-disease similarity matrix information. 'epochs', 'batch_size', 'hidden_channels' and ' dropout' are used to adjust the hyperparameters of the deep learning model.
 
