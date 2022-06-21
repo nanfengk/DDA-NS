@@ -21,3 +21,10 @@ Metrics based on NSGNN models with five different datasets, including AUC, AUPR,
 
 If you want to switch the generated dataset, we can do so by changing the 'dataset' in the sample.' use_feature' is used to control whether to use drug-drug similarity and disease-disease similarity matrix information. 'epochs', 'batch_size', 'hidden_channels' and ' dropout' are used to adjust the hyperparameters of the deep learning model.
 
+### Usage
+* python == 3.8.5
+* pytorch == 1.6.0
+* numpy == 1.20.3
+* torch_geometric == 1.6.1
+* scikit-learn == 1.0.2
+
