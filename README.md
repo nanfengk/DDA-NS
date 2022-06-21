@@ -29,4 +29,4 @@ If you want to switch the generated dataset, we can do so by changing the 'datas
 * scikit-learn == 1.0.2
 
 ### Contrast model code
-Please refer the code of LAGCN [here](https://github.com/storyandwine/LAGCN);
+Please refer the code of DRRS [here](http://bioinformatics.csu.edu.cn/resources/softs/DrugRepositioning/DRRS/index.html);Please refer the code of BNNR [here](https://github.com/BioinformaticsCSU/BNNR);Please refer the code of DeepDR [here](https://github.com/ChengF-Lab/deepDR);Please refer the code of NIMCGCN [here](https://github.com/ljatynu/NIMCGCN/);Please refer the code of LAGCN [here](https://github.com/storyandwine/LAGCN);
