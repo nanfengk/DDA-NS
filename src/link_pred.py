@@ -1,13 +1,13 @@
 import argparse
 import os
 import os.path as osp
+import sys
 from torch.nn import BCEWithLogitsLoss
 from creat_dataset import MyOwnDataset
 from utils import *
 from models import *
 import time
 import datetime
-from matplotlib import pyplot as plt
 
 start_time = datetime.datetime.now()
 time1 = datetime.datetime.strftime(start_time,'%Y-%m-%d %H:%M:%S')
@@ -17,7 +17,6 @@ print(splilt_line)
 
 def train():
     model.train()
-
     total_loss = 0
     train_loss = 0
     y_pred, y_true = [], []
@@ -32,16 +31,13 @@ def train():
         loss = BCEWithLogitsLoss()(logits.view(-1), data.y.to(torch.float))
         y_pred.append(logits.view(-1).cpu())
         y_true.append(data.y.view(-1).cpu().to(torch.float))
-
         loss.backward()
         optimizer.step()
         total_loss += loss.item() * data.num_graphs
         train_loss=total_loss / len(train_dataset)
     train_pred, train_true = torch.cat(y_pred), torch.cat(y_true)
     train_metrics = evaluate_metrics(train_true.detach(), train_pred.detach())
-
     return train_loss, train_metrics
-
 
 @torch.no_grad()
 def test():
@@ -65,7 +61,7 @@ def test():
     return valid_loss, valid_metrics
 
 # Data settings
-parser = argparse.ArgumentParser(description='NSNP')
+parser = argparse.ArgumentParser(description='NSGNN')
 parser.add_argument('--dataset', type=str)
 # GNN settings
 parser.add_argument('--model', type=str, default='GCN')
@@ -104,8 +100,6 @@ parser.add_argument('--pretrained_node_embedding', type=str, default=None,
 parser.add_argument('--use_valedges_as_input', action='store_true')
 parser.add_argument('--eval_steps', type=int, default=1)
 parser.add_argument('--log_steps', type=int, default=1)
-parser.add_argument('--data_appendix', type=str, default='',
-                    help="an appendix to the data directory")
 parser.add_argument('--save_appendix', type=str, default='',
                     help="an appendix to the save directory")
 parser.add_argument('--keep_old', action='store_true',
@@ -122,88 +116,64 @@ args = parser.parse_args()
 
 if args.save_appendix == '':
     args.save_appendix = '_' + time.strftime("%Y%m%d_%H_%M_%S")
-if args.data_appendix == '':
-    args.data_appendix = '_h{}_{}_rph{}'.format(
-        args.num_hops, args.node_label, ''.join(str(args.ratio_per_hop).split('.')))
-    if args.max_nodes_per_hop is not None:
-        args.data_appendix += '_mnph{}'.format(args.max_nodes_per_hop)
-    if args.use_valedges_as_input:
-        args.data_appendix += '_uvai'
 
 args.res_dir = osp.join('../results/{}{}'.format(args.dataset, args.save_appendix))
-# print('Results will be saved in ' + args.res_dir)
 if not os.path.exists(args.res_dir):
     os.makedirs(args.res_dir)
-
 log_file = osp.join(args.res_dir, 'log.txt')
 metrics_file = osp.join(args.res_dir, 'metrics.txt')
+
 # Save command line input.
 cmd_input = 'python ' + ' '.join(sys.argv) + '\n'
 with open(log_file, 'a') as f:
     f.write(cmd_input)
-
 path = osp.join('../dataset', args.dataset)
 dataset = MyOwnDataset(path)
 data = dataset[0]
 
-
 train_auc=[]
 valid_auc=[]
-
-
 train_metrics_sum = {}
 valid_metrics_sum = {}
-
-
-
 
 x_list=[]
 for i in range(1,args.epochs+1):
     x_list.append(i)
 
-
-
 for flod_num in range(0,10):
-
     print('Training Fold ', flod_num + 1)
     split_edge = do_edge_split(dataset, flod_num)
     data.edge_index = split_edge['train']['edge'].t()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    # SEAL.
-    path = dataset.root + '_seal{}'.format(args.data_appendix)
-    use_coalesce = True if args.dataset == 'ogbl-collab' else False
+    path = dataset.root + '_nsgnn'
     if not args.dynamic_train and not args.dynamic_val and not args.dynamic_test:
         args.num_workers = 0
 
-    train_dataset = DynamicDataset(
+    train_dataset = NSGNNDataset(
         path,
         data,
         split_edge,
         num_hops=args.num_hops,
         percent=args.train_percent,
         split='train',
-        use_coalesce=use_coalesce,
         node_label=args.node_label,
         ratio_per_hop=args.ratio_per_hop,
         max_nodes_per_hop=args.max_nodes_per_hop,
         flod_num=flod_num,
     )
-
-    valid_dataset = DynamicDataset(
+    valid_dataset = NSGNNDataset(
         path,
         data,
         split_edge,
         num_hops=args.num_hops,
         percent=args.val_percent,
         split='valid',
-        use_coalesce=use_coalesce,
         node_label=args.node_label,
         ratio_per_hop=args.ratio_per_hop,
         max_nodes_per_hop=args.max_nodes_per_hop,
         flod_num=flod_num,
     )
-
     max_z = 1000  # set a large max_z so that every z has embeddings to look up
 
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size,
@@ -219,7 +189,6 @@ for flod_num in range(0,10):
         emb.weight.requires_grad=False
     else:
         emb = None
-
 
     if args.model == 'DGCNN':
         model = DGCNN(args.hidden_channels, args.num_layers, max_z, args.sortpool_k,
@@ -239,11 +208,8 @@ for flod_num in range(0,10):
         torch.nn.init.xavier_uniform_(emb.weight)
         parameters += list(emb.parameters())
     optimizer = torch.optim.Adam(params=parameters, lr=args.lr)
-    # total_params = sum(p.numel() for param in parameters for p in param)
-    # print(f'Total number of parameters is {total_params}')
 
     start_epoch = 1
-
     train_metrics_list = []
     valid_metrics_list = []
 
@@ -333,8 +299,6 @@ np.savetxt(osp.join(args.res_dir,"fprs_list.txt"), fprs_list, fmt='%.15f')
 np.savetxt(osp.join(args.res_dir,"tprs_list.txt"), tprs_list, fmt='%.15f')
 np.savetxt(osp.join(args.res_dir,"recall_list.txt"), recall_list, fmt='%.15f')
 np.savetxt(osp.join(args.res_dir,"precision_list.txt"), precision_list, fmt='%.15f')
-
-# test=np.loadtxt(osp.join(args.res_dir,"auc_list.txt"))
 
 to_print = (f'AUC: {np.mean(auc_list):.4f}, AUPR: {np.mean(aupr_list):.4f}, '
             f'F1 score: {np.mean(f1_list):.4f}, Accuracy: {np.mean(acc_list):.4f}, '

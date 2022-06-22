@@ -1,7 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
-
 import math
 import numpy as np
 import torch
@@ -10,8 +6,6 @@ from torch.nn import (ModuleList, Linear, Conv1d, MaxPool1d, Embedding, ReLU,
 import torch.nn.functional as F
 from torch_geometric.nn import (GCNConv, SAGEConv, GINConv, 
                                 global_sort_pool, global_add_pool, global_mean_pool)
-import pdb
-
 
 class GCN(torch.nn.Module):
     def __init__(self, hidden_channels, num_layers, max_z, train_dataset, 
@@ -132,8 +126,6 @@ class SAGE(torch.nn.Module):
 
         return x
 
-
-# An end-to-end deep learning architecture for graph classification, AAAI-18.
 class DGCNN(torch.nn.Module):
     def __init__(self, hidden_channels, num_layers, max_z, k=0.6, train_dataset=None, 
                  dynamic_train=False, GNN=GCNConv, use_feature=False, 
@@ -215,7 +207,6 @@ class DGCNN(torch.nn.Module):
         x = self.lin2(x)
         return x
 
-
 class GIN(torch.nn.Module):
     def __init__(self, hidden_channels, num_layers, max_z, train_dataset,
                  use_feature=False, node_embedding=None, dropout=0.5, 
@@ -286,5 +277,3 @@ class GIN(torch.nn.Module):
         x = self.lin2(x)
 
         return x
-
-
