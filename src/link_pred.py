@@ -130,7 +130,7 @@ if args.data_appendix == '':
     if args.use_valedges_as_input:
         args.data_appendix += '_uvai'
 
-args.res_dir = osp.join('results/{}{}'.format(args.dataset, args.save_appendix))
+args.res_dir = osp.join('../results/{}{}'.format(args.dataset, args.save_appendix))
 # print('Results will be saved in ' + args.res_dir)
 if not os.path.exists(args.res_dir):
     os.makedirs(args.res_dir)
@@ -142,7 +142,7 @@ cmd_input = 'python ' + ' '.join(sys.argv) + '\n'
 with open(log_file, 'a') as f:
     f.write(cmd_input)
 
-path = osp.join('dataset', args.dataset)
+path = osp.join('../dataset', args.dataset)
 dataset = MyOwnDataset(path)
 data = dataset[0]
 
@@ -176,7 +176,7 @@ for flod_num in range(0,10):
     if not args.dynamic_train and not args.dynamic_val and not args.dynamic_test:
         args.num_workers = 0
 
-    train_dataset = SEALDataset(
+    train_dataset = DynamicDataset(
         path,
         data,
         split_edge,
@@ -190,7 +190,7 @@ for flod_num in range(0,10):
         flod_num=flod_num,
     )
 
-    valid_dataset = SEALDataset(
+    valid_dataset = DynamicDataset(
         path,
         data,
         split_edge,

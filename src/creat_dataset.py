@@ -39,7 +39,7 @@ class MyOwnDataset(InMemoryDataset):
     # 生成数据集所用的方法
     def process(self):
 
-        row_data = sio.loadmat('raw_dataset\\LRSSL.mat')
+        row_data = sio.loadmat('..\\raw_dataset\\Cdataset.mat')
         dis_drug_matrix = row_data['didr']
         drug_sim = row_data['drug']
         dis_sim = row_data['disease']

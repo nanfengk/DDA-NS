@@ -22,7 +22,7 @@ from torch_geometric.utils import (negative_sampling, add_self_loops,
 import pdb
 np.seterr(divide='ignore',invalid='ignore')
 
-class SEALDataset(InMemoryDataset):
+class DynamicDataset(Dataset):
     def __init__(self, root, data, split_edge, num_hops, percent=100, split='train',
                  use_coalesce=False, node_label='drnl', ratio_per_hop=1.0, flod_num=1,
                  max_nodes_per_hop=None, directed=False):
@@ -30,33 +30,22 @@ class SEALDataset(InMemoryDataset):
         self.flod_num=flod_num
         self.split_edge = split_edge
         self.num_hops = num_hops
-        self.percent = int(percent) if percent >= 1.0 else percent
+        self.percent = percent
         self.split = split
         self.use_coalesce = use_coalesce
         self.node_label = node_label
         self.ratio_per_hop = ratio_per_hop
         self.max_nodes_per_hop = max_nodes_per_hop
         self.directed = directed
-        super(SEALDataset, self).__init__(root)
-        self.data, self.slices = torch.load(self.processed_paths[0])
+        super(DynamicDataset, self).__init__(root)
 
-    @property
-    def processed_file_names(self):
-        if self.percent == 100:
-            name = 'SEAL_{}_data_{}'.format(self.split, self.flod_num)
-        else:
-            name = 'SEAL_{}_data_{}'.format(self.split, self.percent)
-        name += '.pt'
-        return [name]
-
-    def process(self):
-        # pos_edge, neg_edge = get_pos_neg_edges(self.split, self.split_edge,
+        # pos_edge, neg_edge = get_pos_neg_edges(split, self.split_edge,
         #                                        self.data.edge_index,
         #                                        self.data.num_nodes,
         #                                        self.percent)
-
         pos_edge, neg_edge = self.split_edge[self.split]['edge'].T, self.split_edge[self.split]['edge_neg'].T
-
+        self.links = torch.cat([pos_edge, neg_edge], 1).t().tolist()
+        self.labels = [1] * pos_edge.size(1) + [0] * neg_edge.size(1)
 
         # if self.use_coalesce:  # compress mutli-edge into edge with weight
         #     self.data.edge_index, self.data.edge_weight = coalesce(
@@ -67,30 +56,99 @@ class SEALDataset(InMemoryDataset):
             edge_weight = self.data.edge_weight.view(-1)
         else:
             edge_weight = torch.ones(self.data.edge_index.size(1), dtype=int)
-        # A = ssp.csr_matrix(
-        #     (edge_weight, (self.data.edge_index[0], self.data.edge_index[1])),
-        #     shape=(self.data.num_nodes, self.data.num_nodes)
-        # )
-
-        A = ssp.csr_matrix(
+        self.A = ssp.csr_matrix(
             (edge_weight, (self.data.edge_index[0], self.data.edge_index[1])),
-            shape=(self.data.num_nodes,self.data.num_nodes)
+            shape=(self.data.num_nodes, self.data.num_nodes)
         )
         if self.directed:
-            A_csc = A.tocsc()
+            self.A_csc = self.A.tocsc()
         else:
-            A_csc = None
+            self.A_csc = None
 
-        # Extract enclosing subgraphs for pos and neg edges
-        pos_list = extract_enclosing_subgraphs(
-            pos_edge, A, self.data.x, 1, self.num_hops, self.node_label,
-            self.ratio_per_hop, self.max_nodes_per_hop, self.directed, A_csc)
-        neg_list = extract_enclosing_subgraphs(
-            neg_edge, A, self.data.x, 0, self.num_hops, self.node_label,
-            self.ratio_per_hop, self.max_nodes_per_hop, self.directed, A_csc)
+    def __len__(self):
+        return len(self.links)
 
-        torch.save(self.collate(pos_list + neg_list), self.processed_paths[0])
-        del pos_list, neg_list
+    def len(self):
+        return self.__len__()
+
+    def get(self, idx):
+        src, dst = self.links[idx]
+        y = self.labels[idx]
+        tmp = k_hop_subgraph(src, dst, self.num_hops, self.A, self.ratio_per_hop,
+                             self.max_nodes_per_hop, node_features=self.data.x,
+                             y=y, directed=self.directed, A_csc=self.A_csc)
+        data = construct_pyg_graph(*tmp, self.node_label)
+
+        return data
+# class SEALDataset(InMemoryDataset):
+#     def __init__(self, root, data, split_edge, num_hops, percent=100, split='train',
+#                  use_coalesce=False, node_label='drnl', ratio_per_hop=1.0, flod_num=1,
+#                  max_nodes_per_hop=None, directed=False):
+#         self.data = data
+#         self.flod_num=flod_num
+#         self.split_edge = split_edge
+#         self.num_hops = num_hops
+#         self.percent = int(percent) if percent >= 1.0 else percent
+#         self.split = split
+#         self.use_coalesce = use_coalesce
+#         self.node_label = node_label
+#         self.ratio_per_hop = ratio_per_hop
+#         self.max_nodes_per_hop = max_nodes_per_hop
+#         self.directed = directed
+#         super(SEALDataset, self).__init__(root)
+#         self.data, self.slices = torch.load(self.processed_paths[0])
+#
+#     @property
+#     def processed_file_names(self):
+#         if self.percent == 100:
+#             name = 'SEAL_{}_data_{}'.format(self.split, self.flod_num)
+#         else:
+#             name = 'SEAL_{}_data_{}'.format(self.split, self.percent)
+#         name += '.pt'
+#         return [name]
+#
+#     def process(self):
+#         # pos_edge, neg_edge = get_pos_neg_edges(self.split, self.split_edge,
+#         #                                        self.data.edge_index,
+#         #                                        self.data.num_nodes,
+#         #                                        self.percent)
+#
+#         pos_edge, neg_edge = self.split_edge[self.split]['edge'].T, self.split_edge[self.split]['edge_neg'].T
+#
+#
+#         # if self.use_coalesce:  # compress mutli-edge into edge with weight
+#         #     self.data.edge_index, self.data.edge_weight = coalesce(
+#         #         self.data.edge_index, self.data.edge_weight,
+#         #         self.data.num_nodes, self.data.num_nodes)
+#
+#         if 'edge_weight' in self.data:
+#             edge_weight = self.data.edge_weight.view(-1)
+#         else:
+#             edge_weight = torch.ones(self.data.edge_index.size(1), dtype=int)
+#         # A = ssp.csr_matrix(
+#         #     (edge_weight, (self.data.edge_index[0], self.data.edge_index[1])),
+#         #     shape=(self.data.num_nodes, self.data.num_nodes)
+#         # )
+#
+#         A = ssp.csr_matrix(
+#             (edge_weight, (self.data.edge_index[0], self.data.edge_index[1])),
+#             shape=(self.data.num_nodes,self.data.num_nodes)
+#         )
+#         if self.directed:
+#             A_csc = A.tocsc()
+#         else:
+#             A_csc = None
+#
+#         # Extract enclosing subgraphs for pos and neg edges
+#         pos_list = extract_enclosing_subgraphs(
+#             pos_edge, A, self.data.x, 1, self.num_hops, self.node_label,
+#             self.ratio_per_hop, self.max_nodes_per_hop, self.directed, A_csc)
+#         neg_list = extract_enclosing_subgraphs(
+#             neg_edge, A, self.data.x, 0, self.num_hops, self.node_label,
+#             self.ratio_per_hop, self.max_nodes_per_hop, self.directed, A_csc)
+#
+#         torch.save(self.collate(pos_list + neg_list), self.processed_paths[0])
+#         del pos_list, neg_list
 
 
 def extract_enclosing_subgraphs(link_index, A, x, y, num_hops, node_label='drnl', 

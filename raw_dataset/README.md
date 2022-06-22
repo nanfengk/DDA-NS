@@ -29,9 +29,10 @@
 * didr: disease-drug association matrix.
 
 5. Ndataset
-* Wrname: the MESH IDs of drugs;
-* Wdname: the MESH IDs of diseases;
-* didr: disease-drug association matrix.
+* disease_ID: the number of the disease, the MESH ID and the name of the disease;
+* drug_ID: the number of the drug, the MESH ID and the name of the drug;
+* drdi_dict: Drug-disease network represented by MESH ID;
+* drdi: Drug-disease network represented by number.
 
 
 
