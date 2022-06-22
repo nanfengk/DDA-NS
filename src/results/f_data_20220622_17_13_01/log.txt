@@ -1,1 +1,0 @@
-python C:/Users/Administrator/Desktop/NSGNN/src/link_pred.py --dataset f_data --epochs 10 --use_feature
