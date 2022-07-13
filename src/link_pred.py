@@ -66,7 +66,7 @@ parser.add_argument('--dataset', type=str)
 # GNN settings
 parser.add_argument('--model', type=str, default='GCN')
 parser.add_argument('--sortpool_k', type=float, default=0.6)
-parser.add_argument('--num_layers', type=int, default=3)
+parser.add_argument('--num_layers', type=int, default=2)
 parser.add_argument('--hidden_channels', type=int, default=256)
 parser.add_argument('--batch_size', type=int, default=32)
 # Subgraph extraction settings
