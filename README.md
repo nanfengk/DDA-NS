@@ -1,5 +1,5 @@
 # DDA-NS
-## Paper "NSGNN： Predicting Drug-disease Associations Based on Neighborhood Subgraphs of Drug-disease Association Pairs"
+## Paper "DDA-NS： Predicting Drug-disease Associations Based on Neighborhood Subgraphs of Drug-disease Association Pairs"
 
 
 ### 'raw_dataset' directory
