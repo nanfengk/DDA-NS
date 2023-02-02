@@ -4,6 +4,7 @@ import torch
 from torch.nn import (ModuleList, Linear, Conv1d, MaxPool1d, Embedding, ReLU, 
                       Sequential, BatchNorm1d as BN)
 import torch.nn.functional as F
+torch.manual_seed(23)
 from torch_geometric.nn import (GCNConv, SAGEConv, GINConv, 
                                 global_sort_pool, global_add_pool, global_mean_pool)
 
